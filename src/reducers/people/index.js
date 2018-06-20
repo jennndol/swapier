@@ -8,7 +8,7 @@ import {
   GET_PEOPLE_SUCCESS
 } from '../../actionTypes';
 
-export const setError = (state = null, action) => {
+export const error = (state = null, action) => {
   switch (action.type) {
     case GET_PEOPLE_ERROR:
       return action.payload;
@@ -17,7 +17,7 @@ export const setError = (state = null, action) => {
   }
 };
 
-export const setLoading = (state = false, action) => {
+export const loading = (state = false, action) => {
   switch (action.type) {
     case GET_PEOPLE_LOADING:
       return action.payload;
@@ -26,7 +26,7 @@ export const setLoading = (state = false, action) => {
   }
 };
 
-export const setPeople = (state = [], action) => {
+export const people = (state = [], action) => {
   switch (action.type) {
     case GET_PEOPLE_SUCCESS:
       return action.payload;
@@ -34,3 +34,9 @@ export const setPeople = (state = [], action) => {
       return state;
   }
 };
+
+export default combineReducers({
+  error,
+  loading,
+  people
+});
