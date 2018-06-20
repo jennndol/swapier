@@ -6,9 +6,11 @@ import {
 } from 'redux';
 
 import people from '../reducers/people';
+import person from '../reducers/person';
 
 const store = combineReducers({
-  people
+  people,
+  person
 });
 
 export default createStore(store, /* preloadedState, */
