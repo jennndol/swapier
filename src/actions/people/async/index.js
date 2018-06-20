@@ -2,16 +2,22 @@ import axios from 'axios';
 import {
   setError,
   setLoading,
-  setPeople
+  setResults,
+  setCount,
+  setNext,
+  setPrevious
 } from '../sync';
 
-export const getPeople = (token) => {
+export const getPeople = (url) => {
   return (dispatch) => {
     dispatch(setLoading(true));
-    return axios.get('https://swapi.co/api/people')
+    return axios.get(url)
       .then(payload => {
         dispatch(setLoading(false));
-        dispatch(setPeople(payload.data.results));
+        dispatch(setResults(payload.data));
+        dispatch(setCount(payload.data));
+        dispatch(setNext(payload.data));
+        dispatch(setPrevious(payload.data));
         dispatch(setError(null));
       })
       .catch(err => {
