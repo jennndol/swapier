@@ -41,9 +41,11 @@ class Person extends Component {
                       <Table.Cell>
                         <List>
                         {
-                          item.value.map((item, idx) => (
-                              <List.Item key={ idx }>{idx+1}. {item}</List.Item>
-                          ))
+                          item.value.length > 0 ?
+                            item.value.map((item, idx) => (
+                                <List.Item key={ idx }>{idx+1}. {item}</List.Item>
+                            ))
+                            : <List.Item>empty</List.Item>
                         }
                         </List>
                       </Table.Cell>
