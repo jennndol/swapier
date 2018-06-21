@@ -3,6 +3,14 @@
   height: 80px;
 }
 
+.app-main{
+  margin-top: 5em;
+}
+
+.pagination{
+  text-align: center;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
